@@ -17,6 +17,22 @@
 
 ---
 
+## 📸 Preview Tampilan
+
+<p align="center">
+  <img src="docs/assets/preview-wa.png" width="70%" alt="WhatsApp Web Blurred View" />
+  <br>
+  <em>Tampilan WhatsApp Web dengan Masking / Blur Aktif (Otomatis Tertutup)</em>
+</p>
+
+<p align="center">
+  <img src="docs/assets/preview-popup.png" width="340px" alt="KangWATutupin Popup Settings" />
+  <br>
+  <em>Menu Kontrol Popup KangWATutupin (Dark Emerald Theme & Pilihan Efek)</em>
+</p>
+
+---
+
 ## 🌟 Fitur Utama
 
 - **🛡️ Auto-Mask & Blur Panel**: Menyembunyikan daftar chat (panel kiri), pesan aktif (panel kanan), foto profil, media (foto, video, stiker), dan pratinjau pesan secara default.
