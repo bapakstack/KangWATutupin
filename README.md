@@ -48,24 +48,46 @@
 
 ---
 
-## 📥 Cara Instalasi (Mudah & Cepat)
+## 📥 Panduan Instalasi Lengkap (Step-by-Step)
 
 Anda dapat memilih salah satu metode instalasi di bawah ini:
 
-### ⚡ Cara 1: Menggunakan File `.crx` (Drag & Drop)
-1. Unduh file **[KangWATutupin-v2.0.0.crx](https://github.com/bapakstack/KangWATutupin/releases/latest)**.
-2. Buka browser **Google Chrome** dan buka halaman `chrome://extensions/`.
-3. Aktifkan toggle **Developer mode** (Mode Pengembang) di pojok kanan atas.
-4. **Drag & drop (seret dan lepaskan)** file `KangWATutupin-v2.0.0.crx` langsung ke dalam halaman ekstensi Chrome.
-5. Klik **Add extension**. Selesai! 🎉
+---
+
+### ⚡ Cara 1: Menggunakan File `.crx` (Drag & Drop) — *Paling Praktis*
+
+1. **Unduh File `.crx`**:
+   👉 Unduh **[KangWATutupin-v2.0.0.crx](https://github.com/bapakstack/KangWATutupin/releases/download/v2.0.0/KangWATutupin-v2.0.0.crx)** dan simpan di komputer Anda.
+
+2. **Buka Halaman Ekstensi Chrome**:
+   - Di Google Chrome, buka tab baru.
+   - Ketik alamat `chrome://extensions/` di bilah URL lalu tekan **Enter**  
+     *(Atau klik menu titik tiga di kanan atas $\rightarrow$ **Extensions** $\rightarrow$ **Manage Extensions**)*.
+
+3. **Aktifkan Mode Pengembang (Developer Mode)**:
+   - Lihat di **pojok kanan atas** layar halaman ekstensi.
+   - Klik switch toggle **"Developer mode"** (Mode Pengembang) hingga berwarna biru/aktif.
+
+4. **Drag & Drop (Tarik dan Lepaskan)**:
+   - Buka File Explorer (tempat Anda mendownload file `.crx`).
+   - **Tarik (Drag)** file `KangWATutupin-v2.0.0.crx` lalu **lepaskan (Drop)** tepat di tengah-tengah halaman `chrome://extensions/`.
+
+5. **Konfirmasi Pemasangan**:
+   - Akan muncul jendela popup konfirmasi: *"Add KangWATutupin - WhatsApp Web Privacy Guard?"*.
+   - Klik tombol **"Add extension"**.
+
+6. **Selesai!** Buka **[WhatsApp Web](https://web.whatsapp.com)** untuk langsung menikmati privasi chat Anda.
 
 ---
 
-### 📦 Cara 2: Menggunakan File `.zip` (Folder Ekstrak)
-1. Unduh **[KangWATutupin-v2.0.0.zip](https://github.com/bapakstack/KangWATutupin/releases/latest)** dan ekstrak file zip-nya.
-2. Buka `chrome://extensions/` di Google Chrome lalu aktifkan **Developer mode**.
-3. Klik tombol **Load unpacked** (Muat yang tidak dikemas) di kiri atas.
-4. Pilih folder hasil ekstrak tadi. Selesai! 🎉
+### 📦 Cara 2: Menggunakan File `.zip` (Folder Ekstrak) — *Alternatif Jika CRX Dibatasi*
+
+1. Unduh **[KangWATutupin-v2.0.0.zip](https://github.com/bapakstack/KangWATutupin/releases/download/v2.0.0/KangWATutupin-v2.0.0.zip)**.
+2. Klik kanan file `.zip` tersebut lalu pilih **Extract All...** (Ekstrak ke folder).
+3. Buka browser Chrome ke `chrome://extensions/` dan pastikan **Developer mode** sudah aktif di kanan atas.
+4. Klik tombol **"Load unpacked"** (Muat yang tidak dikemas) di pojok kiri atas.
+5. Pilih folder hasil ekstrak tadi.
+6. Ekstensi terpasang dan siap digunakan!
 
 ---
 
