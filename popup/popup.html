@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KangWATutupin - WA Privacy Guard</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PIN LOCK OVERLAY MODAL -->
+  <div id="pinModal" class="pin-modal hidden">
+    <div class="pin-box">
+      <div class="pin-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <h3>Pengaturan Terkunci</h3>
+      <p>Masukkan 4-digit PIN untuk mengubah opsi</p>
+      <div class="pin-inputs">
+        <input type="password" maxlength="1" class="pin-digit" id="pin1" autofocus>
+        <input type="password" maxlength="1" class="pin-digit" id="pin2">
+        <input type="password" maxlength="1" class="pin-digit" id="pin3">
+        <input type="password" maxlength="1" class="pin-digit" id="pin4">
+      </div>
+      <div class="pin-error hidden" id="pinError">PIN Salah! Coba lagi.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>KangWATutupin <span class="v2-tag">v2.0</span></h1>
+          <span class="subtitle">Auto Mask & Privacy Guard</span>
+        </div>
+      </div>
+      <div class="status-badge" id="statusBadge">
+        <span class="dot"></span>
+        <span id="statusText">Aktif</span>
+      </div>
+    </header>
+
+    <!-- Master Switch Card -->
+    <div class="card master-card">
+      <div class="card-info">
+        <span class="card-title">Proteksi Privasi</span>
+        <span class="card-desc">Aktifkan efek sembunyi WA Web</span>
+      </div>
+      <label class="switch master-switch">
+        <input type="checkbox" id="enabled">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Mode Masking Selector -->
+    <div class="section-title">Mode Efek Visual</div>
+    <div class="mode-selector">
+      <label class="mode-option">
+        <input type="radio" name="maskMode" value="blur" id="modeBlur">
+        <div class="mode-card">
+          <span class="mode-name">Blur</span>
+          <span class="mode-desc">Halus</span>
+        </div>
+      </label>
+      <label class="mode-option">
+        <input type="radio" name="maskMode" value="pixelate" id="modePixelate">
+        <div class="mode-card">
+          <span class="mode-name">Pixelate</span>
+          <span class="mode-desc">Matrix</span>
+        </div>
+      </label>
+      <label class="mode-option">
+        <input type="radio" name="maskMode" value="blackout" id="modeBlackout">
+        <div class="mode-card">
+          <span class="mode-name">Blackout</span>
+          <span class="mode-desc">Solid 100%</span>
+        </div>
+      </label>
+    </div>
+
+    <!-- Security & Panic Action -->
+    <div class="section-title">Keamanan & Quick Panic</div>
+    <div class="card panic-btn-card" id="triggerPanicBtn">
+      <div class="card-info">
+        <span class="card-title">🚨 Layar Panic / Boss Key</span>
+        <span class="card-desc">Sembunyikan instan (Shortcut: Alt + P)</span>
+      </div>
+      <button class="btn-action">Aktifkan</button>
+    </div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Auto-Lock Tab Switch</span>
+        <span class="card-desc">Lock otomatis saat pindah tab</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="autoLock">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Kunci PIN Popup</span>
+        <span class="card-desc">Proteksi menu dengan 4-digit PIN</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="pinEnabled">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="pin-setup-box hidden" id="pinSetupBox">
+      <span class="card-desc">Atur 4-Digit PIN Baru:</span>
+      <div class="pin-set-inputs">
+        <input type="password" maxlength="4" id="newPinInput" placeholder="Masukkan PIN 4-digit">
+        <button id="savePinBtn" class="btn-save-pin">Simpan PIN</button>
+      </div>
+    </div>
+
+    <!-- Tampilan Area Panel -->
+    <div class="section-title">Tampilan Area Panel</div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Panel Kiri (Daftar Kontak)</span>
+        <span class="card-desc">Sembunyikan daftar obrolan & kontak</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="blurLeft">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Panel Kanan (Chat Aktif)</span>
+        <span class="card-desc">Sembunyikan isi percakapan yang terbuka</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="blurRight">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Detail Konten -->
+    <div class="section-title">Detail Konten</div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Foto Profil & Nama</span>
+        <span class="card-desc">Sembunyikan avatar & nama kontak</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="blurProfile">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Media & Gambar</span>
+        <span class="card-desc">Sembunyikan foto, video, & stiker</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="blurMedia">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-info">
+        <span class="card-title">Pratinjau Pesan</span>
+        <span class="card-desc">Sembunyikan teks balasan di list kontak</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="blurPreviews">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Sliders -->
+    <div class="section-title">Pengaturan Responsivitas</div>
+
+    <div class="card slider-card">
+      <div class="slider-header">
+        <span class="card-title">Hover Reveal Delay</span>
+        <span class="badge" id="hoverDelayValue">0ms</span>
+      </div>
+      <input type="range" id="hoverDelay" min="0" max="1000" step="50" value="0" class="range-input">
+      <span class="card-desc" style="font-size:10px;">Jeda waktu sebelum konten terbuka saat mouse di-hover.</span>
+    </div>
+
+    <div class="card slider-card">
+      <div class="slider-header">
+        <span class="card-title">Intensitas Blur</span>
+        <span class="badge" id="blurRadiusValue">10px</span>
+      </div>
+      <input type="range" id="blurRadius" min="3" max="25" value="10" class="range-input">
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>💡 <span>Shortcut Panic:</span> Tekan <b>Alt + P</b> atau <b>Esc 2x</b></p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

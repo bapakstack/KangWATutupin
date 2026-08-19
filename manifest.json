@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "KangWATutupin - WhatsApp Web Privacy Guard",
+  "version": "2.0.0",
+  "description": "Sembunyikan dan blur WhatsApp Web secara otomatis. Dilengkapi fitur Hover Reveal, Panic Button (Alt+P), PIN Lock, dan Masking Effects.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-panic": {
+      "suggested_key": {
+        "default": "Alt+P"
+      },
+      "description": "Buka/Tutup Panic Screen (Layar Penutup Instan)"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
