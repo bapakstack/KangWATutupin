@@ -1,3 +1,5 @@
 *.zip
+*.crx
+*.pem
 .system_generated/
 scratch/

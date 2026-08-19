@@ -32,26 +32,24 @@
 
 ---
 
-## 📥 Cara Instalasi (Tanpa Chrome Web Store)
+## 📥 Cara Instalasi (Mudah & Cepat)
 
-Anda tidak perlu menunggu persetujuan toko ekstensi. Cukup ikuti 4 langkah mudah berikut:
+Anda dapat memilih salah satu metode instalasi di bawah ini:
 
-### 1. Download Ekstensi
-Download file ZIP rilis terbaru:
-👉 **[Download KangWATutupin-v2.0.0.zip](https://github.com/bapakstack/KangWATutupin/releases/latest)**
-
-### 2. Ekstrak File ZIP
-Ekstrak file `KangWATutupin-v2.0.0.zip` ke salah satu folder di komputer Anda.
-
-### 3. Pasang di Google Chrome
-1. Buka browser **Google Chrome**.
-2. Masuk ke halaman ekstensi dengan mengetik: `chrome://extensions/` di address bar.
+### ⚡ Cara 1: Menggunakan File `.crx` (Drag & Drop)
+1. Unduh file **[KangWATutupin-v2.0.0.crx](https://github.com/bapakstack/KangWATutupin/releases/latest)**.
+2. Buka browser **Google Chrome** dan buka halaman `chrome://extensions/`.
 3. Aktifkan toggle **Developer mode** (Mode Pengembang) di pojok kanan atas.
-4. Klik tombol **Load unpacked** (Muat yang tidak dikemas) di pojok kiri atas.
-5. Pilih folder hasil ekstrak tadi.
+4. **Drag & drop (seret dan lepaskan)** file `KangWATutupin-v2.0.0.crx` langsung ke dalam halaman ekstensi Chrome.
+5. Klik **Add extension**. Selesai! 🎉
 
-### 4. Selesai! 🎉
-Buka **[WhatsApp Web](https://web.whatsapp.com)** dan ekstensi **KangWATutupin** akan langsung aktif menjaga privasi Anda.
+---
+
+### 📦 Cara 2: Menggunakan File `.zip` (Folder Ekstrak)
+1. Unduh **[KangWATutupin-v2.0.0.zip](https://github.com/bapakstack/KangWATutupin/releases/latest)** dan ekstrak file zip-nya.
+2. Buka `chrome://extensions/` di Google Chrome lalu aktifkan **Developer mode**.
+3. Klik tombol **Load unpacked** (Muat yang tidak dikemas) di kiri atas.
+4. Pilih folder hasil ekstrak tadi. Selesai! 🎉
 
 ---
 
